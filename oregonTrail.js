@@ -60,8 +60,8 @@
 
         // random number function should return  1 or 2, if 1 is returned, then hunt was successful
         this.hunt = function () {
-            if (getRandom(1, 3) == 1) {
-                food = food * 1.5;
+            if (Math.random() < .5) {
+                food += 100;
                 console.log(name + "'s hunt was successful");
             }
             // if the hunt increased current food enough, then reset health indicator
@@ -116,5 +116,5 @@
     
     console.log("Is wagon quarantined: " + quarantine(wagon)); // print true if someone is sick, false otherwise
     console.log("Wagon total food is: " + food(wagon)); // print juan's food + henrietta's food
-
+    
 })();
