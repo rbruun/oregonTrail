@@ -11,7 +11,11 @@
 
         // add a passenger to the list of passengers
         this.addPassenger = function (passenger) {
-            passengers.push(passenger);
+            if (passengers.length < capacity){
+                passengers.push(passenger);
+            } else {
+                console.log("This wagon is full, consider joining another wagon");
+            }
         }
 
         // check of any passenger is currently quarantined
@@ -36,7 +40,7 @@
 
     // define a Traveler
     function Traveler(name) {
-        var food = getRandom(1, 100);
+        var food = getRandom(20, 100);
         var name = name;
         var isHealthy = true;
         console.log(name + "'s initial food = " + food);
